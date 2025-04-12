@@ -56,8 +56,9 @@ def planner_node(state: AgentState) -> Dict[str, Any]:
 
     response = llm.invoke(messages).content.strip()
     # valid_tools = {"ai_meng_tool", "events_tool", "prospective_tool", "web_search_tool"}
-    valid_tools = {"ai_meng_tool", "web_search_tool"}
-    selected = response if response in valid_tools else "web_search_tool"
+    valid_tools = {"ai_meng_tool", "prospective_tool"}
+    selected = response if response in valid_tools else "prospective_tool"
+    print(f"Selected tool: {selected}")
     return {**state, "selected_tool": selected}
 
 
@@ -68,8 +69,8 @@ def tool_router_node(state: AgentState) -> Dict[str, Any]:
     tool_map = {
         "ai_meng_tool": AIMEngTool(),
         # "events_tool": EventsTool(),
-        # "prospective_tool": ProspectiveTool(),
-        "web_search_tool": WebSearchTool()
+        "prospective_tool": ProspectiveTool(),
+        # "web_search_tool": WebSearchTool()
     }
 
     tool = tool_map[tool_name]

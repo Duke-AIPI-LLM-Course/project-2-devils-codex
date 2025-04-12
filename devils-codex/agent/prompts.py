@@ -27,7 +27,7 @@ GUIDELINES:
 TOOL_SELECTION_PROMPT = """You are the planner for a multi-tool Duke University chatbot. Based on the user's question, select the best tool to answer it.
 
 TOOLS:
-1. ai_meng_tool — For questions about the AI Master of Engineering program
+1. ai_meng_tool — For questions about the AI/AIPI Master of Engineering program, such as curriculum, faculty, or career prospects.
 2. prospective_tool — For prospective student-related topics (admissions, life at Duke, costs)
 3. events_tool — For event-related queries (campus activities, performances, lectures)
 4. web_search_tool — For real-time, broad, or fallback information if the above don't suffice
